@@ -9,6 +9,7 @@
 ![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=for-the-badge&logo=github&logoColor=white)
 
 **A production-grade clinical analytics pipeline examining 30-day hospital readmission risk**
+
 *Built with PostgreSQL · Supabase · Tableau Public · Advanced SQL*
 
 ### 📊 [View Live Interactive Story Dashboard →](https://public.tableau.com/app/profile/bonica.patterson/viz/ReAdmission-Workbook/Story1?publish=yes)
