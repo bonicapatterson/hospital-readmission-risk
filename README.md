@@ -71,34 +71,33 @@ Hospital readmissions within 30 days represent one of the most expensive and pre
 The database consists of **5 normalized clinical tables** designed to mirror real hospital EHR (Electronic Health Record) data structures.
 
 ```
-┌─────────────┐       ┌────────────────────┐       ┌─────────────────┐
-│  patients   │──────▶│   admissions       │──────▶│   diagnoses     │
-│─────────────│  1:N  │────────────────────│  1:N  │─────────────────│
-│ patient_id  │       │ admission_id       │       │ diagnosis_id    │
-│ gender      │       │ patient_id (FK)    │       │ admission_id FK │
-│ dob         │       │ admit_time         │       │ icd9_code       │
-│ ethnicity   │       │ discharge_time     │       │ description     │
-└─────────────┘       │ admission_type     │       └─────────────────┘
+┌─────────────┐       ┌────────────────────┐         ┌───────────────────┐
+│  patients   │──────▶│   admissions       │────────▶│   diagnoses       │
+│─────────────│  1:N  │────────────────────│    1:N  │───────────────────│
+│ patient_id  │       │ admission_id       │         │ diagnosis_id      │
+│ gender      │       │ patient_id (FK)    │         │ admission_id (FK) │
+│ dob         │       │ admit_time         │         │ icd9_code         │
+│ ethnicity   │       │ discharge_time     │         │ description       │
+└─────────────┘       │ admission_type     │         └───────────────────┘
                       │ discharge_location │
-                      │ insurance          │       ┌─────────────────┐
-                      │ diagnosis          │──────▶│   procedures    │
-                      └────────────────────┘  1:N  │─────────────────│
-                               │                   │ procedure_id    │
-                               │ 1:N               │ admission_id FK │
-                               ▼                   │ icd9_code       │
-                      ┌──────────────────┐         │ description     │
-                      │   lab_results    │         └─────────────────┘
-                      │──────────────────│
-                      │ lab_id           │
-                      │ admission_id FK  │
-                      │ test_name        │
-                      │ value            │
-                      │ unit             │
-                      │ flag             │
-                      └──────────────────┘
-```
+                      │ insurance          │         ┌───────────────────┐
+                      │ diagnosis          │────────▶│   procedures      │
+                      └────────────────────┘    1:N  │───────────────────│
+                               │                     │ procedure_id      │
+                               │ 1:N                 │ admission_id (FK) │
+                               ▼                     │ icd9_code         │
+                      ┌────────────────────┐         │ description       │
+                      │   lab_results      │         └───────────────────┘
+                      │────────────────────│
+                      │ lab_id             │
+                      │ admission_id (FK)  │
+                      │ test_name          │
+                      │ value              │
+                      │ unit               │
+                      │ flag               │
+                      └────────────────────┘
 
----
+
 
 ## 🛠️ SQL Techniques Demonstrated
 
