@@ -83,11 +83,11 @@ The database consists of **5 normalized clinical tables** designed to mirror rea
                       │ insurance        │       ┌─────────────────┐
                       │ diagnosis        │──────▶│   procedures    │
                       └──────────────────┘  1:N  │─────────────────│
-                               │                  │ procedure_id    │
-                               │ 1:N              │ admission_id FK │
-                               ▼                  │ icd9_code       │
-                      ┌──────────────────┐        │ description     │
-                      │   lab_results    │        └─────────────────┘
+                               │                 │ procedure_id    │
+                               │ 1:N             │ admission_id FK │
+                               ▼                 │ icd9_code       │
+                      ┌──────────────────┐       │ description     │
+                      │   lab_results    │       └─────────────────┘
                       │──────────────────│
                       │ lab_id           │
                       │ admission_id FK  │
