@@ -324,9 +324,9 @@ cd hospital-readmission-risk
 
 ---
 
-## 👩‍💻 About
+## 👩🏾‍💻 About
 
-**Bonica Patterson** — Data Analyst with a focus on healthcare analytics, SQL, and data storytelling.
+**Bonica Patterson** — Data Analyst.
 
 📁 [GitHub Portfolio](https://github.com/bonicapatterson) &nbsp;·&nbsp; 📊 [Tableau Public](https://public.tableau.com/app/profile/bonica.patterson)
 
